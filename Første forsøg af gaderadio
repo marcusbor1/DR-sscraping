@@ -1,0 +1,18 @@
+import requests
+import json
+# URL til podcast feedet
+url = "https://api.dr.dk/podcasts/v1/feeds/gaderadio-pa-p6-beat"
+
+# Send anmodning til serveren
+response = requests.get(url)
+
+# Tjek om forespørgslen lykkedes
+if response.status_code == 200:
+    # Pars JSON-data
+    data = response.json()
+    
+    # Eksempel på at printe titlerne på afsnittene
+    for item in data['episodes']:
+        print(item['title'])
+else:
+    print("Failed to retrieve data")
