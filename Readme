@@ -1,0 +1,7 @@
+echo "# DR-sscraping" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/marcusbor1/DR-sscraping.git
+git push -u origin main
